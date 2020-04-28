@@ -9,8 +9,8 @@ const Game = () => {
 		<>
 			<div className="game">
 				<div>
-					<div>{`Player o\'s total win : ${status[1]}`}</div>
-					<div>{`Player x\'s total win : ${status[2]}`}</div>
+					<div>{`Player o's total win : ${status[1]}`}</div>
+					<div>{`Player x's total win : ${status[2]}`}</div>
 					<div>{`Total Draw            : ${status[3]}`}</div>
 				</div>
 				{!status[0] && (
@@ -80,7 +80,7 @@ const handleClick = (clickPosition, boardValues, setBoardValues, turn, setTurn, 
 			if (winner) {
 				console.log('the winner is ' + winner);
 				status[0] = winner + 'Won the game';
-				const index = winner == 'o' ? 1 : 2;
+				const index = winner === 'o' ? 1 : 2;
 				status[index] = status[index] + 1;
 				const newStatus = status.slice();
 				setStatus(newStatus);
@@ -90,7 +90,7 @@ const handleClick = (clickPosition, boardValues, setBoardValues, turn, setTurn, 
 					status[3] = status[3] + 1;
 					status[0] = 'The game is a draw';
 					const newStatus = status.slice();
-					setStatus(status);
+					setStatus(newStatus);
 				}
 			}
 			setTurn(!turn);
